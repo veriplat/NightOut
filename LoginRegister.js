@@ -25,10 +25,10 @@ var Login = function(req) {
   return new Promise(function(resolve, reject) {
     // Setup connection to mysql database to query for existing user
     var con = mysql.createConnection({
-        host: "localhost",
-        user: "lilave232",
-        password: "Quinn123!",
-        database: "NightOut"
+        host: "",
+        user: "",
+        password: "",
+        database: ""
       });
     // Get password from request sent by express POST and encrypt it using md5 hashing
     let Password = crypto.createHash('md5').update(req.body.Password).digest("hex");
@@ -79,10 +79,10 @@ var Register = function(req)  {
   return new Promise(function(resolve, reject) {
     // Connect to the mysql database server
     var con = mysql.createConnection({
-        host: "localhost",
-        user: "lilave232",
-        password: "Quinn123!",
-        database: "NightOut"
+        host: "",
+        user: "",
+        password: "",
+        database: ""
       });
     // Get and encrypt password from POST request to send to database
     let Password = mysql.escape(crypto.createHash('md5').update(req.body.Password).digest("hex"));
